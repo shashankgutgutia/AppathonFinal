@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quizback"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:theme="@style/AppTheme.NoActionBar"
+    tools:context="com.adgvit.appathon2k18.appathon2k18.Quiz">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.1"
+            android:src="@drawable/quizhead" />
+        <TextView
+            android:id="@+id/tv_q"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.6"
+            android:text="QUESTION"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/timer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="02:65"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:layout_marginBottom="20sp"/>
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.3"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button2"
+                android:alpha="0.50"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_weight="0.25"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:theme="@style/Widget.AppCompat.Button.Borderless" />
+
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_weight="0.25"
+                android:alpha="0.50"
+                android:textSize="18sp"
+                android:theme="@style/Widget.AppCompat.Button.Borderless" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:layout_weight="0.25"
+                android:textSize="18sp"
+                android:alpha="0.50"
+                android:theme="@style/Widget.AppCompat.Button.Borderless" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="0.25"
+                android:textSize="18sp"
+
+                android:alpha="0.50"
+                android:theme="@style/Widget.AppCompat.Button.Borderless" />
+
+        </LinearLayout>
+
+
+        <ImageButton
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.1"
+            android:background="@null"
+            android:src="@drawable/next" />
+
+    </LinearLayout>
+
+</LinearLayout>
