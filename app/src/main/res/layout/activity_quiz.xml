@@ -52,7 +52,7 @@
 
             <Button
                 android:id="@+id/button2"
-                android:alpha="0.50"
+                android:alpha="0.5"
                 android:layout_width="match_parent"
                 android:layout_height="40sp"
                 android:layout_weight="0.25"

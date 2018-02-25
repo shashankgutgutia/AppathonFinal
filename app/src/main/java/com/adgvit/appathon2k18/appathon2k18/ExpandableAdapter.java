@@ -95,7 +95,11 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements Hete
         TextView lblListHeader = (TextView) convertView.findViewById(R.id.listHeader);
         ImageView imageView=convertView.findViewById(R.id.arrow);
         ImageView imageView2=convertView.findViewById(R.id.grpIcon);
-        lblListHeader.setTypeface(null, Typeface.BOLD);
+
+        //Typeface mycustomfont=Typeface.createFromAsset(getAssets(),"font/SF-Compact-Display-Thin.otf");
+        //lblListHeader.setTypeface(mycustomfont);
+
+
         lblListHeader.setText(headerTitle);
         if (groupPosition==0){
             imageView2.setImageResource(R.drawable.timeline);

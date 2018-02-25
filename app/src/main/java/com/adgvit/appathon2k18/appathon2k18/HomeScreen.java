@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -206,6 +207,7 @@ public class HomeScreen extends AppCompatActivity {
         listDataHeader.add("Food");
         listDataHeader.add("Quiz");
         listDataHeader.add("Goodies");
+
         /*
         List<String> tm = new ArrayList<String>();
         List<String> wf = new ArrayList<String>();
