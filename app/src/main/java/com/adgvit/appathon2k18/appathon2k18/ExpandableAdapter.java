@@ -110,9 +110,14 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements Hete
         else if(groupPosition==2){
             imageView2.setImageResource(R.drawable.food);
         }
-        else{
+        else if(groupPosition==3){
             imageView2.setImageResource(R.drawable.quiz);
         }
+        else
+        {
+            imageView2.setImageResource(R.drawable.gift);
+        }
+
         if (isExpanded) {
             imageView.setImageResource(R.drawable.up);
         } else {
