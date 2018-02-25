@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     android:padding="10dp">
 
-    <Button
+    <ImageButton
         android:id="@+id/button"
-        android:background="@drawable/quiz_button"
+        android:background="@null"
         android:layout_gravity="center"
-        android:text="START"
+        android:src="@drawable/start"
         android:onClick="quizbtn"
         android:textSize="18sp"
         android:textStyle="bold"

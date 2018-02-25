@@ -11,13 +11,16 @@
         android:layout_height="wrap_content"
         android:contentDescription="BarCode" />
 
-    <Button
+    <ImageButton
         android:id="@+id/food_status"
         android:onClick="CheckFood"
+        android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/barcode"
+        android:src="@drawable/check"
+        android:background="@null"
         android:text="Check Status" />
 
     <TextView

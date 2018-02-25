@@ -18,8 +18,8 @@
         android:textSize="24sp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:textColor="#5b5b5b"
-        android:fontFamily="sans-serif-medium"
+        android:textColor="#777777"
+
         android:text="User ID- " />
 
         <TextView
@@ -30,8 +30,8 @@
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:visibility="gone"
-            android:fontFamily="sans-serif-medium"
-            android:textColor="#5b5b5b"
+
+            android:textColor="#777777"
             android:text="ANAJHGFYIO" />
 
     </LinearLayout>
@@ -47,8 +47,8 @@
         android:textSize="24sp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:textColor="#5b5b5b"
-        android:fontFamily="sans-serif-medium"
+        android:textColor="#777777"
+
         android:text="Password- " />
 
         <TextView
@@ -59,19 +59,27 @@
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:visibility="gone"
-            android:textColor="#5b5b5b"
-            android:fontFamily="sans-serif-medium"
+            android:textColor="#777777"
+
             android:text="UB125OP678" />
 
     </LinearLayout>
 
-    <Button
-        android:background="@drawable/buttonback"
-        android:id="@+id/wifiDetails"
-        android:onClick="WifiDetails"
-        android:textColor="@color/colorWhite"
-        android:text="Get Details"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+
+
+        <ImageButton
+            android:src="@drawable/get"
+            android:background="@null"
+            android:id="@+id/wifiDetails"
+            android:onClick="WifiDetails"
+            android:layout_marginTop="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
 
 </LinearLayout>

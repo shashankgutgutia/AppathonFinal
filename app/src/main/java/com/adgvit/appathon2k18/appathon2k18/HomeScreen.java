@@ -106,6 +106,13 @@ public class HomeScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //naman
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
+
         setContentView(R.layout.activity_home_screen);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
@@ -171,7 +178,7 @@ public class HomeScreen extends AppCompatActivity {
         {
             frameLayout.setBackgroundResource(R.drawable.three);
         }
-        if (localTime.equals("21")||localTime.equals("22")||localTime.equals("23")||localTime.equals("24")||localTime.equals("01")||localTime.equals("02")||localTime.equals("03")||localTime.equals("04")||localTime.equals("05"))
+        if (localTime.equals("21")||localTime.equals("22")||localTime.equals("23")||localTime.equals("24")||localTime.equals("00")||localTime.equals("01")||localTime.equals("02")||localTime.equals("03")||localTime.equals("04")||localTime.equals("05"))
         {
             frameLayout.setBackgroundResource(R.drawable.four);
         }
@@ -311,10 +318,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public class RelativeLayoutTouchListener implements View.OnTouchListener {
-
-
         private float downY, upY;
-
 
         public void onTopToBottomSwipe() {
             slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
@@ -585,12 +589,10 @@ public class HomeScreen extends AppCompatActivity {
 
 
     //naman
-
     public void settimeline()
     {
-
         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-        temp.setText(currentDateTimeString);
+        //temp.setText(currentDateTimeString);
 
     }
 
@@ -599,7 +601,7 @@ public class HomeScreen extends AppCompatActivity {
     public  void lefttab()
     {
         int i=0;
-        
+
 
         i--;
 
@@ -611,8 +613,6 @@ public class HomeScreen extends AppCompatActivity {
 
 
         i++;
-
-
     }
 
 

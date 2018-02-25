@@ -46,6 +46,7 @@ public class Timeline extends AppCompatActivity {
         recyclerView.startAnimation(anim);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Timeline");
+
     }
 
     @Override
