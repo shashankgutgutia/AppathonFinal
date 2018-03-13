@@ -6,9 +6,15 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +22,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.HeterogeneousExpandableList;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,6 +43,8 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements Hete
     private Context context;
     private List<String> listDataHeader; // header titles
     SharedPreferences sp;
+    TimelinePageAdapter timelinePageAdapter;
+    ViewPager mViewPager;
     // Child data in format of header title, child title
     //private HashMap<String, List<String>> listDataChild;
 
@@ -133,7 +142,33 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements Hete
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             sp=context.getSharedPreferences("key", 0);
             if(groupPosition==0) {
+                timelinePageAdapter=new TimelinePageAdapter(((AppCompatActivity)context).getSupportFragmentManager());
                 convertView = layoutInflater.inflate(R.layout.list_timeline, null);
+                mViewPager= (ViewPager) convertView.findViewById(R.id.pager);
+                mViewPager.setAdapter(timelinePageAdapter);
+                int cr=mViewPager.getCurrentItem();
+
+                Log.d("Timeline", Integer.toString(cr));
+                //TODO ImageView ONCLICK Shared Preference- get variable in home-increment and send-read current item and set
+                /*int current = sp.getInt("Position",-2);
+                if(current==-2){
+                    SharedPreferences.Editor sedt1 = sp.edit();
+                    sedt1.putInt("Position", 0);
+                    sedt1.apply();
+                }
+                else if(current==1){
+                    int cr=mViewPager.getCurrentItem();
+                    Log.d("Timeline", (String.valueOf(cr)));
+                    if(cr<4)
+                        mViewPager.setCurrentItem(1);
+                }
+                else if(current==-1){
+                    int cr=mViewPager.getCurrentItem();
+                    Log.d("Timeline", (String.valueOf(cr)));
+                    if(cr>0)
+                        mViewPager.setCurrentItem(4);
+                }
+                */
             }
             else if(groupPosition==1){
                     convertView = layoutInflater.inflate(R.layout.list_wifi, null);

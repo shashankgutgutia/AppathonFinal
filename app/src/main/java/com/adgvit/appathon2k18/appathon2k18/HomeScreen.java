@@ -82,7 +82,7 @@ public class HomeScreen extends AppCompatActivity {
     LinearLayout linearLayout2;
     ExpandableAdapter listAdapter;
     ArrayList<TimelineItems> arrayList = new ArrayList<>();
-
+    int lastexpanded=-1;
 
     //navad
     String Reg_Num;
@@ -186,19 +186,6 @@ public class HomeScreen extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         List<String> listDataHeader = new ArrayList<String>();
         //HashMap<String, List<String>> listDataChild = new HashMap<String, List<String>>();
 
@@ -224,14 +211,22 @@ public class HomeScreen extends AppCompatActivity {
         listDataChild.put(listDataHeader.get(2), fd);
         listDataChild.put(listDataHeader.get(3), qz);
         */
-        listAdapter = new ExpandableAdapter(getApplicationContext(), listDataHeader);
+        listAdapter = new ExpandableAdapter(this, listDataHeader);
         expListView.setAdapter(listAdapter);
 
 
         slidingUpPanelLayout.setScrollableViewHelper(new NestedScrollableViewHelper());
         linearLayout.setOnTouchListener(new RelativeLayoutTouchListener());
-
-
+        expListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+            @Override
+            public void onGroupExpand(int groupPosition) {
+                if (lastexpanded != -1
+                        && groupPosition != lastexpanded) {
+                    expListView.collapseGroup(lastexpanded);
+                }
+                lastexpanded = groupPosition;
+            }
+        });
         //navad
         firebase();
     }
@@ -279,14 +274,13 @@ public class HomeScreen extends AppCompatActivity {
            new GetWifi().execute();
         }
     }
+
     public void CheckFood(View v){
         sp= this.getSharedPreferences("key", 0);
         Boolean foodstats=sp.getBoolean("fcheck",false);
         if(!foodstats) {
             new CheckFoodStatus().execute();
         }
-
-
     }
 
     class CheckFoodStatus extends AsyncTask<Void,Void,Void>{
@@ -347,6 +341,7 @@ public class HomeScreen extends AppCompatActivity {
                         // top or down
                         if (deltaY < 0) {
                             this.onTopToBottomSwipe();
+                            expListView.collapseGroup(lastexpanded);
                             return true;
                         }
                         if (deltaY > 0) {

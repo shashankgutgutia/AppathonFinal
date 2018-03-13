@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\Naman Khurpia\Desktop\shashnk\shashank fix\AppAThon2k18.iml" filepath="C:\Users\Naman Khurpia\Desktop\shashnk\shashank fix\AppAThon2k18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/App-A-Thon_Naman.iml" filepath="$PROJECT_DIR$/App-A-Thon_Naman.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Naman Khurpia\Desktop\shashnk\shashank fix\app\app.iml" filepath="C:\Users\Naman Khurpia\Desktop\shashnk\shashank fix\app\app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/shashank fix.iml" filepath="$PROJECT_DIR$/shashank fix.iml" />
     </modules>
   </component>
 </project>
