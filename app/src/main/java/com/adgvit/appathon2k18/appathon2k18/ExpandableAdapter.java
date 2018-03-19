@@ -237,6 +237,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements Hete
                 Boolean fstatus = sp.getBoolean("fcheck", false);
                 if (!prevEncodedImage.equalsIgnoreCase("")) {
                     byte[] b = Base64.decode(prevEncodedImage, Base64.DEFAULT);
+                    Log.d("test",b.toString());
                     Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
                     imageView.setImageBitmap(bitmap);
                 }
@@ -251,13 +252,15 @@ public class ExpandableAdapter extends BaseExpandableListAdapter implements Hete
 
             } else if (groupPosition == 4) {
                 convertView = layoutInflater.inflate(R.layout.list_goodies, null);
-                ImageView imageView = (ImageView) convertView.findViewById(R.id.barcodeGoodies);
-                String prevEncodedImage = sp.getString("goodies", "");
+                ImageView imageView1 = (ImageView) convertView.findViewById(R.id.barcodeGoodies);
+                String prevEncodedImage1 = sp.getString("goodies", "");
+                Log.d("fgh",prevEncodedImage1);
                 Boolean gstatus = sp.getBoolean("gcheck", false);
-                if (!prevEncodedImage.equalsIgnoreCase("")) {
-                    byte[] b = Base64.decode(prevEncodedImage, Base64.DEFAULT);
-                    Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
-                    imageView.setImageBitmap(bitmap);
+                if (!prevEncodedImage1.equalsIgnoreCase("")) {
+                    byte[] b1 = Base64.decode(prevEncodedImage1, Base64.DEFAULT);
+                    Log.d("test",b1.toString());
+                    Bitmap bitmap1 = BitmapFactory.decodeByteArray(b1, 0, b1.length);
+                    imageView1.setImageBitmap(bitmap1);
                 }
                 if (gstatus) {
                     TextView status = convertView.findViewById(R.id.receive);

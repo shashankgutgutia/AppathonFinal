@@ -71,7 +71,7 @@ public class HomeScreen extends AppCompatActivity {
     Bitmap bitmap1,bitmap2;
     public final static int QRcodeWidth = 500 ;
     SharedPreferences sp;
-    String value;
+    String value,value1;
     LottieAnimationView animationView;
     ExpandableListView expListView;
     ImageView frameLayout;
@@ -412,7 +412,8 @@ public class HomeScreen extends AppCompatActivity {
         super.onStart();
         sp= HomeScreen.this.getSharedPreferences("key", 0);
         value=sp.getString("food","");
-        if(value.isEmpty()) {
+        value1=sp.getString("goodies","");
+        if(value.isEmpty()||value1.isEmpty()) {
             new ImageLoading().execute();
         }
     }
@@ -550,17 +551,26 @@ public class HomeScreen extends AppCompatActivity {
                 byte[] b = baos.toByteArray();
                 attendance = Base64.encodeToString(b, Base64.DEFAULT);
 
+
+
+                SharedPreferences.Editor sedt1 = sp.edit();
+                sedt1.putString("food", attendance);
+                Log.d("abc",attendance);
+                sedt1.apply();
+
+            } catch (WriterException e) {
+                e.printStackTrace();
+            }
+            try{
                 bitmap2 = TextToImageEncode(goods);
                 bitmap2.compress(Bitmap.CompressFormat.PNG, 100, baos);
                 byte[] bg = baos.toByteArray();
                 goodies = Base64.encodeToString(bg, Base64.DEFAULT);
-
                 SharedPreferences.Editor sedt1 = sp.edit();
-                sedt1.putString("food", attendance);
                 sedt1.putString("goodies",goodies);
                 sedt1.apply();
-
-            } catch (WriterException e) {
+            }
+            catch (WriterException e) {
                 e.printStackTrace();
             }
             return null;
