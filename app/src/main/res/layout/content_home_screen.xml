@@ -5,7 +5,7 @@
     xmlns:gpb="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:id="@+id/background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.adgvit.appathon2k18.appathon2k18.HomeScreen"
     tools:showIn="@layout/activity_home_screen">

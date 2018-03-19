@@ -12,6 +12,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v4.widget.NestedScrollView;
@@ -53,6 +54,7 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.sothree.slidinguppanel.ScrollableViewHelper;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
@@ -148,7 +150,6 @@ public class HomeScreen extends AppCompatActivity {
                 arrayList.add(new TimelineItems(times[count], Name, details[count]));
                 count++;
             }
-
 
             Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
             Date currentLocalTime = cal.getTime();
@@ -543,10 +544,11 @@ public class HomeScreen extends AppCompatActivity {
             String partreg = sp.getString("Reg_Num", "");
             String attendance,goodies;
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            ByteArrayOutputStream bao = new ByteArrayOutputStream();
             String qrattend = partreg + "_food";
             String goods=partreg+ "_goodies";
             try {
-                bitmap1 = TextToImageEncode(qrattend);
+                bitmap1 = newLoad(qrattend);
                 bitmap1.compress(Bitmap.CompressFormat.PNG, 100, baos);
                 byte[] b = baos.toByteArray();
                 attendance = Base64.encodeToString(b, Base64.DEFAULT);
@@ -558,58 +560,38 @@ public class HomeScreen extends AppCompatActivity {
                 Log.d("abc",attendance);
                 sedt1.apply();
 
-            } catch (WriterException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             try{
-                bitmap2 = TextToImageEncode(goods);
-                bitmap2.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                byte[] bg = baos.toByteArray();
+                bitmap2 = newLoad(goods);
+                bitmap2.compress(Bitmap.CompressFormat.PNG, 100, bao);
+                byte[] bg = bao.toByteArray();
                 goodies = Base64.encodeToString(bg, Base64.DEFAULT);
                 SharedPreferences.Editor sedt1 = sp.edit();
                 sedt1.putString("goodies",goodies);
                 sedt1.apply();
             }
-            catch (WriterException e) {
+            catch (Exception e) {
                 e.printStackTrace();
             }
             return null;
         }
     }
 
-    public Bitmap TextToImageEncode(String Value) throws WriterException {
-        BitMatrix bitMatrix;
-        try {
-            bitMatrix = new MultiFormatWriter().encode(
-                    Value,
-                    BarcodeFormat.DATA_MATRIX.QR_CODE,
-                    QRcodeWidth, QRcodeWidth, null
-            );
 
-        } catch (IllegalArgumentException Illegalargumentexception) {
-
-            return null;
+    public Bitmap newLoad(String str){
+        MultiFormatWriter multiFormatWriter=new MultiFormatWriter();
+        try{
+            BitMatrix bitMatrix=multiFormatWriter.encode(str,BarcodeFormat.QR_CODE,500,500);
+            BarcodeEncoder barcodeEncoder=new BarcodeEncoder();
+            Bitmap bitmap=barcodeEncoder.createBitmap(bitMatrix);
+            return bitmap;
+        } catch (WriterException e) {
+            e.printStackTrace();
         }
-        int bitMatrixWidth = bitMatrix.getWidth();
-
-        int bitMatrixHeight = bitMatrix.getHeight();
-
-        int[] pixels = new int[bitMatrixWidth * bitMatrixHeight];
-
-        for (int y = 0; y < bitMatrixHeight; y++) {
-            int offset = y * bitMatrixWidth;
-
-            for (int x = 0; x < bitMatrixWidth; x++) {
-
-                pixels[offset + x] = bitMatrix.get(x, y) ? ContextCompat.getColor(HomeScreen.this,R.color.QRCodeBlack):ContextCompat.getColor(HomeScreen.this,R.color.colorWhite);
-            }
-        }
-        Bitmap bitmap = Bitmap.createBitmap(bitMatrixWidth, bitMatrixHeight, Bitmap.Config.ARGB_4444);
-
-        bitmap.setPixels(pixels, 0, 500, 0, 0, bitMatrixWidth, bitMatrixHeight);
-        return bitmap;
+        return null;
     }
-
 
     public int firebase()
     {
