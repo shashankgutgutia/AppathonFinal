@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:background="@drawable/whitebox"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:src="@drawable/tech_logo"
+                android:id="@+id/icon"
+
+                />
+
+            <TextView
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="COMPANY NAME"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:id="@+id/companyname"
+                android:textColor="#1A1A1A"
+
+                />
+
+        </LinearLayout>
+
+        </FrameLayout>
+
+
+
+
+

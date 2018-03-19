@@ -17,6 +17,17 @@
         android:scaleType="centerCrop"
         />
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/settings"
+        android:background="@null"
+        android:layout_gravity="end"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/settings"
+        />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,12 +37,20 @@
 
         />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/sunmoon"
+        android:layout_marginTop="220dp"
+        />
 
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
         xmlns:sothree="http://schemas.android.com/apk/res-auto"
         android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
         android:gravity="bottom"
         sothree:umanoPanelHeight="110dp"
         sothree:umanoFadeColor="@android:color/transparent"
@@ -44,20 +63,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.jpardogo.android.googleprogressbar.library.GoogleProgressBar
-                android:id="@+id/google_progress2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                gpb:type="chrome_floating_circles"
-                />
-            <TextView
-                android:id="@+id/setup"
-                android:textColor="@color/colorWhite"
-                android:textSize="16sp"
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="120sp"
+                android:layout_height="120sp"
                 android:visibility="invisible"
-                android:text="Setting You Up..."
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_gravity="center"
+                android:id="@+id/animView"/>
         </LinearLayout>
 
         <LinearLayout
@@ -66,7 +77,6 @@
             android:background="@color/colorWhite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
 
 
 

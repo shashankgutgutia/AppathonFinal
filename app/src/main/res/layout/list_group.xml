@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:weightSum="1"
-    android:padding="20dp">
+    android:padding="14dp">
 
     <ImageView
         android:id="@+id/grpIcon"
@@ -26,8 +26,8 @@
         android:fontFamily="@font/roboto_thin"
         android:gravity="start|center"
         android:text="Group Header"
-        android:textColor="#9F9F9F"
-        android:textSize="21sp"
+        android:textColor="#1A1A1A"
+        android:textSize="19sp"
         android:textStyle="normal" />
 
 

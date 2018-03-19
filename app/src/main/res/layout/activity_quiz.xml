@@ -2,6 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,33 +14,44 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="0.4">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.1"
             android:src="@drawable/quizhead" />
         <TextView
+            android:layout_marginTop="10sp"
+            android:padding="5sp"
             android:id="@+id/tv_q"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="150sp"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.6"
             android:text="QUESTION"
+            android:gravity="center"
             android:textColor="#FFFFFF"
+            android:textStyle="bold"
             android:textSize="20sp" />
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="0.6">
         <TextView
             android:id="@+id/timer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="02:65"
+            android:layout_weight="0.1"
             android:textColor="#FFFFFF"
-            android:textSize="32sp"
+            android:textSize="38sp"
+            android:gravity="center"
+            android:textStyle="bold"
             android:layout_marginBottom="20sp"/>
 
 
@@ -48,47 +60,50 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.3"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="7sp">
 
             <Button
                 android:id="@+id/button2"
-                android:alpha="0.5"
                 android:layout_width="match_parent"
-                android:layout_height="40sp"
+                android:layout_height="30sp"
                 android:layout_weight="0.25"
-                android:textSize="18sp"
-                android:textColor="#000"
-                android:theme="@style/Widget.AppCompat.Button.Borderless" />
-
-
+                android:background="@drawable/button_quiz1"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:layout_marginBottom="5sp"
+                android:theme="@style/Widget.AppCompat.Button.Borderless">
+            </Button>
             <Button
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
-                android:layout_height="40sp"
+                android:textColor="#ffffff"
+                android:layout_height="30sp"
                 android:layout_weight="0.25"
-                android:alpha="0.50"
-                android:textSize="18sp"
+                android:background="@drawable/button_quiz2"
+                android:textSize="14sp"
+                android:layout_marginBottom="5sp"
                 android:theme="@style/Widget.AppCompat.Button.Borderless" />
-
             <Button
                 android:id="@+id/button4"
+                android:textColor="#ffffff"
                 android:layout_width="match_parent"
-                android:layout_height="40sp"
+                android:layout_height="30sp"
                 android:layout_weight="0.25"
-                android:textSize="18sp"
-                android:alpha="0.50"
+                android:layout_marginBottom="5sp"
+                android:textSize="14sp"
+                android:background="@drawable/button_quiz3"
                 android:theme="@style/Widget.AppCompat.Button.Borderless" />
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:textColor="#ffffff"
+                android:layout_height="30sp"
                 android:layout_weight="0.25"
-                android:textSize="18sp"
-
-                android:alpha="0.50"
+                android:textSize="14sp"
+                android:background="@drawable/button_quiz4"
                 android:theme="@style/Widget.AppCompat.Button.Borderless" />
-
         </LinearLayout>
 
 
@@ -99,7 +114,8 @@
             android:layout_gravity="center"
             android:layout_weight="0.1"
             android:background="@null"
-            android:src="@drawable/next" />
+            android:src="@drawable/next"
+            android:onClick="nextClick"/>
 
     </LinearLayout>
 

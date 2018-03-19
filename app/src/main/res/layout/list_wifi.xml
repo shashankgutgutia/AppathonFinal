@@ -71,11 +71,10 @@
 
 
         <ImageButton
-            android:src="@drawable/get"
+            android:src="@drawable/ci"
             android:background="@null"
-            android:id="@+id/wifiDetails"
-            android:onClick="WifiDetails"
-            android:layout_marginTop="15sp"
+            android:id="@+id/connectionissues"
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

@@ -15,4 +15,22 @@
     </string>
     <string name="title_activity_home_screen">HomeScreen</string>
     <string name="food_check">Redeemed</string>
+    <string name="nfood_check">Not Redeemed</string>
+    <string name="good_check">Received</string>
+    <string name="ngood_check">Not Received</string>
+
+    <string-array name="sponsornames">
+        <item>"Shriram Housing"</item>
+        <item>"Jetbrains"</item>
+        <item>"Souled Store"</item>
+        <item>"Cover it up"</item>
+        <item>"Venson Electronics"</item>
+        <item>"Marposs"</item>
+        <item>"Brandstik"</item>
+        <item>".Tech"</item>
+        <item>"Wolfram"</item>
+        <item>"Zepline"</item>
+
+    </string-array>
+
 </resources>

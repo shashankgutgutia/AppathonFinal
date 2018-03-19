@@ -3,44 +3,77 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:weightSum="1"
-    android:paddingTop="15dp"
-    android:paddingBottom="15dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:layout_margin="10dp"
-    android:orientation="horizontal">
 
+    android:padding="5dp"
+    android:orientation="vertical">
 
-
-    <ImageView
-        android:id="@+id/lb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/left"
-        android:layout_weight="0.1"
-        android:layout_margin="20dp"
-        android:layout_marginEnd="5dp"
-        android:layout_gravity="center"
-        />
-
-    <android.support.v4.view.ViewPager
-        android:layout_weight="0.8"
-        android:id="@+id/pager"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/box"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
 
-    </android.support.v4.view.ViewPager>
+        android:id="@+id/cardid">
 
-    <ImageView
-        android:id="@+id/rb"
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title"
+android:paddingTop="11dp"
+                android:text="Opening Ceremony"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto_thin"
+                android:textColor="#1A1A1A"
+                android:layout_weight="0.13"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/location"
+
+                android:layout_weight="0.13"
+                android:textColor="#1A1A1A"
+                android:text="TT Shakespeare Gallery"
+                android:fontFamily="@font/roboto_thin"
+                android:textSize="15sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/time"
+                android:textColor="#1A1A1A"
+                android:fontFamily="@font/roboto_thin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.23"
+                android:text="10:00-11:00 am" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageButton
+        android:src="@drawable/fulltimeline"
+        android:background="@null"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/timeline"
+        android:onClick="fullTime"
+        android:layout_marginTop="15sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/right"
-        android:layout_weight="0.1"
-        android:layout_margin="20dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="5dp"
-        />
+        android:layout_height="wrap_content" />
 
 
 
