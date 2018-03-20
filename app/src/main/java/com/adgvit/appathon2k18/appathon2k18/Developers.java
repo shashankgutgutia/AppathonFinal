@@ -25,7 +25,7 @@ public class Developers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        try {
+
             setContentView(R.layout.activity_developers);
 
             lr = (LinearLayout) findViewById(R.id.lr);
@@ -52,10 +52,12 @@ public class Developers extends AppCompatActivity {
                 lr.setBackgroundResource(R.drawable.back3);
 
             }
+
+        /*catch (Exception e){
+            e.printStackTrace();
+            //Toast.makeText(Developers.this, "Connection Issue.Try Again", Toast.LENGTH_SHORT).show();
         }
-        catch (Exception e){
-            Toast.makeText(Developers.this, "Connection Issue.Try Again", Toast.LENGTH_SHORT).show();
-        }
+        */
     }
 
     public void backHome(View v){

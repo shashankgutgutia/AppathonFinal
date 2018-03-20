@@ -20,86 +20,127 @@
 
         />
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content">
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/whitebox"
-            android:layout_gravity="center_horizontal"
-            android:background="@null"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Shashank Gutgutia"
-            android:textColor="#1A1A1A"
+        <LinearLayout
             android:layout_gravity="center"
-            />
-
-
-
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content">
-
-        <ImageButton
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/whitebox"
-            android:layout_gravity="center_horizontal"
-            android:background="@null"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Aryan Navad"
-            android:textColor="#1A1A1A"
+            android:layout_margin="20dp"
+            android:orientation="horizontal"
+            android:background="@drawable/whitebox"
+            android:padding="10sp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/shashank"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5sp"
+                android:layout_marginLeft="10sp"
+                android:layout_gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/roboto_thin"
+                    android:textColor="#1A1A1A"
+                    android:text="Shashank Gutgutia"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_thin"
+                    android:textColor="#1A1A1A"
+                    android:text="Android Developer"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
             android:layout_gravity="center"
-            />
-
-
-
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content">
-
-        <ImageButton
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/whitebox"
-            android:layout_gravity="center_horizontal"
-            android:background="@null"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Naman Khurpia"
-            android:textColor="#1A1A1A"
+            android:layout_margin="20dp"
+            android:orientation="horizontal"
+            android:background="@drawable/whitebox"
+            android:padding="10sp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/aryan"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5sp"
+                android:layout_marginLeft="10sp"
+                android:layout_gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/roboto_thin"
+                    android:textColor="#1A1A1A"
+                    android:text="Aryan Navad"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_thin"
+                    android:textColor="#1A1A1A"
+                    android:text="Android Developer"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
             android:layout_gravity="center"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/whitebox"
+            android:orientation="horizontal"
+            android:padding="10sp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/naman"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10sp"
+                android:layout_marginLeft="10sp"
+                android:layout_gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/roboto_thin"
+                    android:textColor="#1A1A1A"
+                    android:text="Naman Khurpia"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_thin"
+                    android:textColor="#1A1A1A"
+                    android:text="Developer+Designer"/>
+            </LinearLayout>
+        </LinearLayout>
 
-
-
-
-    </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
