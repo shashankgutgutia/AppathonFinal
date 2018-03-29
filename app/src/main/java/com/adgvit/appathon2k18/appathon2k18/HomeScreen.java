@@ -151,6 +151,8 @@ public class HomeScreen extends AppCompatActivity {
                 count++;
             }
 
+
+
             Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
             Date currentLocalTime = cal.getTime();
             DateFormat date = new SimpleDateFormat("HH");

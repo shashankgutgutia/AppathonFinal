@@ -25,39 +25,39 @@ public class Developers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            try {
+                setContentView(R.layout.activity_developers);
 
-            setContentView(R.layout.activity_developers);
-
-            lr = (LinearLayout) findViewById(R.id.lr);
-
-
-            Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
-            Date currentLocalTime = cal.getTime();
-            DateFormat date = new SimpleDateFormat("HH");
-            // you can get seconds by adding  "...:ss" to it
-            date.setTimeZone(TimeZone.getTimeZone("GMT+5:30"));
-            String localTime = date.format(currentLocalTime);
-            Log.w(localTime, "1");
+                lr = (LinearLayout) findViewById(R.id.lr);
 
 
-            if (localTime.equals("06") || localTime.equals("07") || localTime.equals("08") || localTime.equals("09") || localTime.equals("10") || localTime.equals("11") || localTime.equals("12")) {
-                lr.setBackgroundResource(R.drawable.back1);
+                Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
+                Date currentLocalTime = cal.getTime();
+                DateFormat date = new SimpleDateFormat("HH");
+                // you can get seconds by adding  "...:ss" to it
+                date.setTimeZone(TimeZone.getTimeZone("GMT+5:30"));
+                String localTime = date.format(currentLocalTime);
+                Log.w(localTime, "1");
 
+
+                if (localTime.equals("06") || localTime.equals("07") || localTime.equals("08") || localTime.equals("09") || localTime.equals("10") || localTime.equals("11") || localTime.equals("12")) {
+                    lr.setBackgroundResource(R.drawable.back1);
+
+                }
+                if (localTime.equals("13") || localTime.equals("14") || localTime.equals("15") || localTime.equals("16")) {
+                    lr.setBackgroundResource(R.drawable.back2);
+
+                }
+                if (localTime.equals("17") || localTime.equals("18") || localTime.equals("19") || localTime.equals("20") || localTime.equals("21") || localTime.equals("22") || localTime.equals("23") || localTime.equals("24") || localTime.equals("00") || localTime.equals("01") || localTime.equals("02") || localTime.equals("03") || localTime.equals("04") || localTime.equals("05")) {
+                    lr.setBackgroundResource(R.drawable.back3);
+
+                }
             }
-            if (localTime.equals("13") || localTime.equals("14") || localTime.equals("15") || localTime.equals("16")) {
-                lr.setBackgroundResource(R.drawable.back2);
 
-            }
-            if (localTime.equals("17") || localTime.equals("18") || localTime.equals("19") || localTime.equals("20") || localTime.equals("21") || localTime.equals("22") || localTime.equals("23") || localTime.equals("24") || localTime.equals("00") || localTime.equals("01") || localTime.equals("02") || localTime.equals("03") || localTime.equals("04") || localTime.equals("05")) {
-                lr.setBackgroundResource(R.drawable.back3);
-
-            }
-
-        /*catch (Exception e){
-            e.printStackTrace();
-            //Toast.makeText(Developers.this, "Connection Issue.Try Again", Toast.LENGTH_SHORT).show();
+        catch (Exception e){
+            Toast.makeText(Developers.this, "Connection Issue.Try Again", Toast.LENGTH_SHORT).show();
         }
-        */
+
     }
 
     public void backHome(View v){
